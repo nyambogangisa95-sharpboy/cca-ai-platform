@@ -1,7 +1,7 @@
-import { openai } from "./openai";
-import { PineconeClient } from "@pinecone-database/pinecone";
+import { getOpenAIClient } from "./openai";
+import * as Pinecone from "@pinecone-database/pinecone";
 
-const pinecone = new PineconeClient();
+const pinecone = new (Pinecone as any).PineconeClient();
 
 function hasPineconeConfig() {
   return Boolean(
@@ -25,6 +25,7 @@ export async function initPinecone() {
 }
 
 export async function getEmbedding(text: string) {
+  const openai = getOpenAIClient();
   const response = await openai.embeddings.create({
     model: "text-embedding-3-small",
     input: text,
@@ -55,7 +56,7 @@ export async function searchKnowledgeBase(query: string) {
     });
 
     return (result.matches ?? [])
-      .map((match) => match.metadata?.text)
+      .map((match: any) => match.metadata?.text)
       .filter(Boolean)
       .join("\n\n");
   } catch (error) {

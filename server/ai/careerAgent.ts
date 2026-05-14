@@ -1,4 +1,4 @@
-import { openai } from "../../lib/ai/openai";
+import { getOpenAIClient } from "../../lib/ai/openai";
 import { searchKnowledgeBase } from "../../lib/ai/embeddings";
 
 const baseSystemPrompt = `You are the Corporate Career Academy intelligent assistant. Use available academy content, mentorship data, career assessments, and program information to produce practical and actionable guidance. Always answer as a career ecosystem assistant, not a generic chatbot.
@@ -13,6 +13,7 @@ export async function getAgentResponse(message: string, userProfile?: Record<str
     [`\nUser question:\n${message}`]
   ).join("\n");
 
+  const openai = getOpenAIClient();
   const response = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     messages: [
@@ -32,6 +33,7 @@ Create an ATS-friendly CV and cover letter for the candidate below. Provide a Li
 
 Profile:\nEducation: ${profile.education}\nSkills: ${profile.skills}\nExperience: ${profile.experience}\nCareer goal: ${profile.careerGoal ?? "Not specified"}`;
 
+  const openai = getOpenAIClient();
   const response = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     messages: [
@@ -50,6 +52,7 @@ export async function matchMentor(goals: string, interests: string) {
 You are matching students to mentors using the following inputs:\n- Goals: ${goals}\n- Interests: ${interests}\n
 Recommend 3 mentor archetypes, their expertise, and why they are a good match.`;
 
+  const openai = getOpenAIClient();
   const response = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     messages: [
