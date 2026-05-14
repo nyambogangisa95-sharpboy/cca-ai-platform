@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corporate Career Academy Agent</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Corporate Career Academy Agent</h1>
+      <p>Use this interface to interact with the career chat agent, generate a CV package, or find mentor recommendations.</p>
+    </header>
+
+    <div id="status" class="status success">Ready to connect to the AI backend.</div>
+
+    <form class="api-form" data-action="chat">
+      <h2>Career Chat</h2>
+      <label for="message">Question</label>
+      <textarea id="message" name="message" placeholder="Ask about career strategy, mentorship, or resume advice."></textarea>
+      <button type="submit">Send Chat Request</button>
+    </form>
+
+    <form class="api-form" data-action="cv">
+      <h2>CV Package</h2>
+      <label for="education">Education</label>
+      <input id="education" name="education" type="text" placeholder="e.g. B.S. in Marketing" />
+      <label for="skills">Skills</label>
+      <textarea id="skills" name="skills" placeholder="e.g. stakeholder communication, program management"></textarea>
+      <label for="experience">Experience</label>
+      <textarea id="experience" name="experience" placeholder="e.g. 6 years in corporate training and operations"></textarea>
+      <label for="careerGoal">Career Goal</label>
+      <input id="careerGoal" name="careerGoal" type="text" placeholder="e.g. move into leadership development" />
+      <button type="submit">Generate CV Package</button>
+    </form>
+
+    <form class="api-form" data-action="mentor">
+      <h2>Mentor Matching</h2>
+      <label for="goals">Goals</label>
+      <textarea id="goals" name="goals" placeholder="e.g. improve executive presence, switch to product leadership"></textarea>
+      <label for="interests">Interests</label>
+      <textarea id="interests" name="interests" placeholder="e.g. coaching, people development, HR technology"></textarea>
+      <button type="submit">Match Mentors</button>
+    </form>
+
+    <div id="results"></div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
