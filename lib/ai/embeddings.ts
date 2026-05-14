@@ -1,14 +1,24 @@
 import { getOpenAIClient } from "./openai";
-import * as Pinecone from "@pinecone-database/pinecone";
+import { Pinecone } from "@pinecone-database/pinecone";
 
-const pinecone = new (Pinecone as any).PineconeClient();
+function getPineconeConfig() {
+  const apiKey = process.env.PINECONE_API_KEY;
+  const controllerHostUrl =
+    process.env.PINECONE_CONTROLLER_HOST ||
+    (process.env.PINECONE_ENVIRONMENT
+      ? `https://controller.${process.env.PINECONE_ENVIRONMENT}.pinecone.io`
+      : undefined);
+
+  return {
+    apiKey,
+    controllerHostUrl,
+    indexName: process.env.PINECONE_INDEX_NAME,
+  };
+}
 
 function hasPineconeConfig() {
-  return Boolean(
-    process.env.PINECONE_API_KEY &&
-      process.env.PINECONE_ENVIRONMENT &&
-      process.env.PINECONE_INDEX_NAME
-  );
+  const { apiKey, controllerHostUrl, indexName } = getPineconeConfig();
+  return Boolean(apiKey && controllerHostUrl && indexName);
 }
 
 export async function initPinecone() {
@@ -16,12 +26,14 @@ export async function initPinecone() {
     return null;
   }
 
-  await pinecone.init({
-    apiKey: process.env.PINECONE_API_KEY,
-    environment: process.env.PINECONE_ENVIRONMENT,
+  const { apiKey, controllerHostUrl, indexName } = getPineconeConfig();
+
+  const pinecone = new Pinecone({
+    apiKey: apiKey!,
+    controllerHostUrl: controllerHostUrl!,
   });
 
-  return pinecone.Index(process.env.PINECONE_INDEX_NAME!);
+  return pinecone.index(indexName!);
 }
 
 export async function getEmbedding(text: string) {
@@ -47,12 +59,10 @@ export async function searchKnowledgeBase(query: string) {
 
     const vector = await getEmbedding(query);
     const result = await index.query({
-      queryRequest: {
-        topK: 5,
-        vector,
-        includeMetadata: true,
-        includeValues: false,
-      },
+      topK: 5,
+      vector,
+      includeMetadata: true,
+      includeValues: false,
     });
 
     return (result.matches ?? [])
@@ -96,6 +106,6 @@ export async function upsertKnowledgeBase(
     }))
   );
 
-  await index.upsert({ upsertRequest: { vectors } });
+  await index.upsert(vectors);
   return { success: true, count: vectors.length };
 }
