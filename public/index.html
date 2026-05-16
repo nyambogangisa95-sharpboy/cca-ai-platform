@@ -1,14 +1,220 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Corporate Career Academy</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-    h1 { color: #333; }
+    :root {
+      color-scheme: light;
+      font-family: Inter, system-ui, sans-serif;
+      color: #0f172a;
+      background: #eff6f0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #f4faf6 0%, #eef6f0 100%);
+      color: #0f172a;
+    }
+
+    .page-shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+
+    .hero {
+      background: #ffffff;
+      border: 1px solid #d7e6dc;
+      border-radius: 32px;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.09);
+      padding: 2.5rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .brand-logo {
+      width: 180px;
+      min-width: 160px;
+      border-radius: 1rem;
+      background: rgba(30, 141, 47, 0.08);
+      padding: 1rem;
+    }
+
+    .hero-title {
+      margin: 0;
+      font-size: clamp(2.6rem, 4vw, 4rem);
+      line-height: 1.02;
+    }
+
+    .hero-copy {
+      margin: 0;
+      max-width: 760px;
+      color: #334155;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .cta-button {
+      background: #1e8d2f;
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 0.95rem 1.6rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .feature-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: 2rem;
+    }
+
+    .feature-card {
+      background: #f7fbf7;
+      border: 1px solid #d7e6dc;
+      border-radius: 22px;
+      padding: 1.5rem;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .feature-card h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.15rem;
+      color: #1e8d2f;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      margin: 3rem 0 1rem;
+      color: #0f172a;
+    }
+
+    .responsibilities {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .responsibility {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid #e5ede6;
+      padding: 1.5rem;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .responsibility h3 {
+      margin-top: 0;
+      color: #0f172a;
+      font-size: 1.05rem;
+    }
+
+    .responsibility ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1.2rem;
+      color: #475569;
+      line-height: 1.8;
+    }
+
+    .responsibility li {
+      margin-bottom: 0.55rem;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 <body>
-  <h1>Corporate Career Academy</h1>
-  <p>AI-powered career development platform</p>
+  <div class="page-shell">
+    <section class="hero">
+      <div class="hero-top">
+        <img src="/logo.svg" alt="Corporate Career Academy logo" class="brand-logo" />
+        <div>
+          <p class="eyebrow">Corporate Career Academy</p>
+          <h1 class="hero-title">A complete AI-enabled website for customer support, sales, content, and career services.</h1>
+        </div>
+      </div>
+      <p class="hero-copy">This website now communicates the full range of responsibilities for your AI assistant business. Use the agent page for automated support, CV creation, mentor matching, and fast client interactions.</p>
+      <div class="cta-buttons">
+        <a href="/app-ui.html" class="cta-button">Use the AI Agent</a>
+        <a href="#capabilities" class="cta-button" style="background: #d32027;">See Platform Features</a>
+        <a href="/dashboard.html" class="cta-button" style="background: #0f172a;">Open Dashboard</a>
+      </div>
+    </section>
+
+    <section id="capabilities">
+      <h2 class="section-title">Main Responsibilities</h2>
+      <div class="feature-grid">
+        <div class="feature-card"><h2>Customer Support</h2><p>Reply to clients automatically, answer questions instantly, handle website and WhatsApp chats, and gather client requirements.</p></div>
+        <div class="feature-card"><h2>Client & Project Management</h2><p>Store client information, track projects and deadlines, manage appointments and payments, and send reminders and updates.</p></div>
+        <div class="feature-card"><h2>Content & Design Assistance</h2><p>Generate captions, posters, blogs, ads, suggest colors, layouts, branding ideas, and help with social content.</p></div>
+        <div class="feature-card"><h2>Sales & Marketing</h2><p>Generate leads, recommend services, send follow-ups and promotions, and schedule social media content.</p></div>
+        <div class="feature-card"><h2>Website & App Management</h2><p>Monitor performance, detect errors and downtime, improve SEO, and analyze visitor behavior.</p></div>
+        <div class="feature-card"><h2>Analytics & Reporting</h2><p>Track revenue, traffic, client activity, generate business reports, and provide actionable performance summaries.</p></div>
+        <div class="feature-card"><h2>Security & Backup</h2><p>Detect suspicious activity, protect user data, and automate secure backups and restores.</p></div>
+        <div class="feature-card"><h2>Career Guidance</h2><p>Recommend careers and courses, support CV and interview preparation, and match mentors with learners.</p></div>
+        <div class="feature-card"><h2>Automation</h2><p>Automate emails, quotations, invoices, notifications, and organize files and workflows to reduce manual work.</p></div>
+        <div class="feature-card"><h2>AI Memory & Intelligence</h2><p>Remember client preferences and conversations, personalize interactions, and make smart recommendations.</p></div>
+      </div>
+    </section>
+
+    <section class="responsibilities">
+      <div class="responsibility">
+        <h3>Deploy AI Output</h3>
+        <ul>
+          <li>Connect the AI agent from the app UI to the backend.</li>
+          <li>Ensure /api/ai routes are reachable in production.</li>
+          <li>Set the OPENAI_API_KEY in Vercel environment variables.</li>
+        </ul>
+      </div>
+      <div class="responsibility">
+        <h3>Use Updated Branding</h3>
+        <ul>
+          <li>Serving the new home page from /public/index.html.</li>
+          <li>Using the logo colors consistently across the site.</li>
+          <li>Providing a link to the interactive AI agent experience.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer">If the AI output is still not appearing, confirm that the OpenAI API key is configured in Vercel and that the deployed URL is using the latest build.</div>
+  </div>
 </body>
 </html>

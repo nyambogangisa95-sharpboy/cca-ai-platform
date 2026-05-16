@@ -1,8 +1,19 @@
+:root {
+  color-scheme: light;
+  --cca-green: #1e8d2f;
+  --cca-green-soft: #daf8df;
+  --cca-red: #d32027;
+  --cca-red-soft: #fde7e8;
+  --cca-charcoal: #0f172a;
+  --cca-surface: #f2f7f4;
+  --cca-surface-strong: #ffffff;
+}
+
 html {
-  font-family: system-ui, sans-serif;
-  line-height: 1.5;
-  color: #111827;
-  background: #f7fafc;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: var(--cca-charcoal);
+  background: var(--cca-surface);
 }
 
 body {
@@ -11,12 +22,83 @@ body {
 }
 
 main {
-  max-width: 900px;
-  margin: 3rem auto;
+  max-width: 1040px;
+  margin: 2.5rem auto;
   padding: 1.5rem;
+}
+
+.home-page {
+  padding: 0 1rem 2rem;
+}
+
+.hero-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbf8 100%);
+  border: 1px solid #d7e6dc;
+  border-radius: 28px;
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.08);
+  padding: 2.25rem;
+}
+
+.brand-header {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.brand-logo {
+  width: 132px;
+  height: auto;
+  border-radius: 18px;
+  background: rgba(30, 141, 47, 0.07);
+  padding: 0.75rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--cca-red);
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  line-height: 1.05;
+}
+
+.hero-copy {
+  max-width: 720px;
+  margin: 1.1rem 0 2rem;
+  font-size: 1.05rem;
+  color: #334155;
+}
+
+.feature-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.feature-card {
+  background: var(--cca-surface-strong);
+  border: 1px solid #e2ece4;
+  border-radius: 22px;
+  padding: 1.5rem;
+}
+
+.feature-card h2 {
+  margin-top: 0;
+  color: var(--cca-green);
+}
+
+.feature-card p {
+  margin: 0.75rem 0 0;
+  color: #475569;
 }
 
 h1,
 h2 {
-  color: #0f172a;
+  color: var(--cca-charcoal);
 }

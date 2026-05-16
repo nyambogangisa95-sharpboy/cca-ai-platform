@@ -9,21 +9,35 @@
 <body>
   <div class="container">
     <header>
-      <h1>Corporate Career Academy Agent</h1>
-      <p>Use this interface to interact with the career chat agent, generate a CV package, or find mentor recommendations.</p>
+      <div class="header-branding">
+        <img src="/logo.svg" alt="Corporate Career Academy logo" class="brand-logo" />
+        <div>
+          <h1>Corporate Career Academy AI Agent</h1>
+          <p>Automated support, mentor matching, CV generation, and marketing assistant features for your business.</p>
+        </div>
+      </div>
+      <nav style="margin-top:0.75rem; display:flex; gap:0.5rem; align-items:center;">
+        <a href="/dashboard.html" class="cta-button" style="padding:0.55rem 1rem; font-size:0.95rem;">Dashboard</a>
+        <a href="/index.html" class="cta-button" style="padding:0.55rem 1rem; font-size:0.95rem; background:#d32027;">Home</a>
+      </nav>
     </header>
 
     <div id="status" class="status success">Ready to connect to the AI backend.</div>
 
+    <section class="intro-card">
+      <h2>Get started</h2>
+      <p>Use the forms below to test chat support, generate a CV package, or match mentors instantly.</p>
+    </section>
+
     <form class="api-form" data-action="chat">
-      <h2>Career Chat</h2>
+      <h2>Instant Client Support</h2>
       <label for="message">Question</label>
-      <textarea id="message" name="message" placeholder="Ask about career strategy, mentorship, or resume advice."></textarea>
+      <textarea id="message" name="message" placeholder="Ask about a client request, campaign idea, or career guidance."></textarea>
       <button type="submit">Send Chat Request</button>
     </form>
 
     <form class="api-form" data-action="cv">
-      <h2>CV Package</h2>
+      <h2>CV & Career Package</h2>
       <label for="education">Education</label>
       <input id="education" name="education" type="text" placeholder="e.g. B.S. in Marketing" />
       <label for="skills">Skills</label>

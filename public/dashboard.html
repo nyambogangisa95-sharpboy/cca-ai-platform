@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard — Corporate Career Academy</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .dashboard-hero { padding: 1.5rem; background: #ffffff; border: 1px solid #d7e6dc; border-radius: 16px; margin-bottom: 1.25rem; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; }
+    .card { background: #fff; border: 1px solid #e6f0e9; border-radius: 14px; padding: 1rem; min-height: 220px; }
+    .card h3 { margin-top: 0; color: #0f172a; }
+    .muted { color: #64748b; }
+    .small { font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-branding">
+        <img src="/logo.svg" alt="Corporate Career Academy logo" class="brand-logo" />
+        <div>
+          <h1>Dashboard</h1>
+          <p class="muted">Client & Project Management • Analytics & Reporting</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="dashboard-hero">
+      <h2>Overview</h2>
+      <p class="small">This dashboard provides quick access to client records, active projects, upcoming deadlines, revenue summaries, and AI-driven insights. The backend endpoints are placeholders — connect your data sources to visualize real metrics.</p>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <h3>Client & Project Management</h3>
+        <ul>
+          <li>Store and view client profiles and contact details.</li>
+          <li>Track projects, progress, and deadlines.</li>
+          <li>Appointments, invoices, and payment statuses.</li>
+          <li>Quick actions: message client, create invoice, schedule call.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Analytics & Reporting</h3>
+        <ul>
+          <li>Traffic and conversion summaries.</li>
+          <li>Revenue by client and campaign.</li>
+          <li>Activity feed (client messages, tasks completed).</li>
+          <li>Exportable performance reports (CSV/PDF).</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>AI Insights</h3>
+        <p class="small muted">Connect the AI agent to provide recommendations here: lead scoring, task prioritization, content suggestions, and CV stats.</p>
+      </div>
+
+      <div class="card">
+        <h3>Automation & Backups</h3>
+        <p class="small">Schedule backups, review security events, and manage automation flows (emails, invoices, reminders).</p>
+      </div>
+    </section>
+
+    <section style="margin-top:1.5rem;">
+      <a href="/app-ui.html" class="cta-button">Open AI Agent</a>
+      <a href="/index.html" style="margin-left:0.75rem;" class="cta-button" >Back to Home</a>
+    </section>
+  </div>
+</body>
+</html>

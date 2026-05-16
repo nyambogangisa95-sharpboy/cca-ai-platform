@@ -1,0 +1,12 @@
+<svg width="640" height="180" viewBox="0 0 640 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Corporate Career Academy logo">
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22b34a" />
+      <stop offset="100%" stop-color="#0f7f2e" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="180" fill="transparent" />
+  <polygon fill="#d32127" points="64,18 78,62 124,66 88,94 100,140 64,116 28,140 40,94 4,66 50,62" />
+  <text x="180" y="120" font-family="Inter, system-ui, sans-serif" font-size="120" font-weight="900" fill="url(#brandGrad)">CCA</text>
+  <text x="185" y="155" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="600" fill="#1f2937">Corporate Career Academy</text>
+</svg>
